@@ -66,9 +66,8 @@ int pin_start()
 		return -1;
 	}
 
-	status = vl53l5cx_set_i2c_address(&Dev[i], address[i]<<1);
-	Dev[i].platform.address = address[i];	
-	//vl53l5cx_comms_close(&Dev[i].platform);
+	status = vl53l5cx_set_i2c_address(&Dev[i], address[i]<<1);	
+	vl53l5cx_comms_close(&Dev[i].platform);
 	usleep(DELAY);
 	}
 
