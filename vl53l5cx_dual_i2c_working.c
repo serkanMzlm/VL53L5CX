@@ -8,12 +8,13 @@
 #include "vl53l5cx_api.h"
 
 #define DELAY 100000
+#define DELAY_SLEEP  5000
 
 VL53L5CX_Configuration dev[4];
 uint8_t status, isAlive, isReady,i;
 VL53L5CX_ResultsData 	Results;
 
-int address_slave[] = {0x30, 0x31, 0x32, 0x33};
+char address_slave[] = {0x30, 0x31, 0x32, 0x33};
 
 
 int main()
@@ -21,50 +22,57 @@ int main()
 	for(i=0;i<4;i++){
 		status = vl53l5cx_comms_init(&dev[i].platform);
 		if(status) return -1;
+		usleep(DELAY_SLEEP);
 	}
-	printf("1");
-
-	dev[0].platform.address = 0x30<<1;
-	dev[1].platform.address = 0x31<<1;
-	dev[2].platform.address = 0x32<<1;
-	dev[3].platform.address = 0x33<<1;
 	
-	printf("2");
+for(i=0;i<4;i++)
+{
+	dev[i].platform.address = address_slave[i]<<1;
+}
+
+	// dev[0].platform.address = 0x30<<1;
+	// dev[1].platform.address = 0x31<<1;
+	// dev[2].platform.address = 0x32<<1;
+	// dev[3].platform.address = 0x33<<1;
+	
+	
 
 	for(i=0;i<4;i++){
 		status = vl53l5cx_set_ranging_frequency_hz(&dev[i], 50);
 		if(status) return -1;
+		usleep(DELAY_SLEEP);
 	
 	}
-	printf("3");
+	
 
 	for(i=0;i<4;i++){
 		status = vl53l5cx_is_alive(&dev[i], &isAlive);
 		if(!isAlive || status) return status;
+		usleep(DELAY_SLEEP);
 
 	}
-	printf("4");
+	
 
 
 	for(i=0;i<4;i++){
 		status = vl53l5cx_init(&dev[i]);
 		if(status) return status;
+		usleep(DELAY_SLEEP);
 	}
-	printf("4");
+	
 
 	for(i=0;i<4;i++){
 		status = vl53l5cx_start_ranging(&dev[i]);
+		usleep(DELAY_SLEEP);
 	}
-		printf("5");
+	
 	for(i=0;i<4;i++){
 		vl53l5cx_check_data_ready(&dev[i], &isReady);
+		usleep(DELAY_SLEEP);
 	}
-	printf("6");
-
-	int b=0;
-	while(i<20)
-	{	label:
-
+	int loop =0;
+	while(loop<20)
+	{	
 		for(i=0;i<4;i++)
 		{
 			status = vl53l5cx_check_data_ready(&dev[i], &isReady);
@@ -81,17 +89,13 @@ int main()
 				}
 				printf("\n");
 				}
-				i++;
+				loop++;
 			}
 			usleep(5000);
 		}
 		
 	}
-	printf("\n Devam etmek icin 1 bas\n");
-	scanf("%d",&b);
-	if (b==1) {
-		i=0;
-		goto label;}
+	
 	
 	for(i=0;i<4;i++)
 	{
