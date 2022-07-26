@@ -7,7 +7,6 @@
 
 #include "vl53l5cx_api.h"
 
-#define DELAY 100000
 #define DELAY_SLEEP  5000
 
 VL53L5CX_Configuration dev[4];
