@@ -26,7 +26,7 @@ static int directionPin(int );
 static int writePin(int ,int);
 int pin_start();
 
-unsigned char  address[4] = {0x25,0x26,0x27,0x28};
+unsigned char  address[4] = {0x30,0x31,0x32,0x33};
 
 int main()
 {
