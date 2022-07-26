@@ -7,7 +7,7 @@ NOTE: Since I am using four sensors, Lpn pins are connected to GPIO 17, GPIO 27,
 
 NOTE: AVDD and IOVDD must be supplied with voltage.
 
-*NOTE: A maximum voltage of 3.3V should be applied to the IOWA input.**
+**NOTE: A maximum voltage of 3.3V should be applied to the IOWA input.**
 
 NOTE: AVDD and IOVDD can be connected to 3.3v by short circuit.
 
