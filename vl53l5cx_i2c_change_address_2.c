@@ -143,7 +143,6 @@ static int exportPin(int pin)
     bytes_written = snprintf(buffer,BUFFER_MAX,"%d",pin);
     write(fd,buffer,bytes_written);
     close(fd);
-
     return 0;
 
 }
