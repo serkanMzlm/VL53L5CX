@@ -1,14 +1,14 @@
 # VL53L5CX 
 
-####Sensor: VL53L5CX
-####Board: Raspberyy Pi3 B+
+#### Sensor: VL53L5CX
+#### Board: Raspberyy Pi3 B+
 
-####NOTE: Since I am using four sensors, Lpn pins are connected to GPIO 17, GPIO 27, GPIO 22, GPIO 23 on the raspberry.
-####NOTE: AVDD and IOVDD must be supplied with voltage.
-####NOTE: A maximum voltage of 3.3V should be applied to the IOWA input.
-####NOTE: AVDD and IOVDD can be connected to 3.3v by short circuit.
+#### NOTE: Since I am using four sensors, Lpn pins are connected to GPIO 17, GPIO 27, GPIO 22, GPIO 23 on the raspberry.
+#### NOTE: AVDD and IOVDD must be supplied with voltage.
+#### NOTE: A maximum voltage of 3.3V should be applied to the IOWA input.
+#### NOTE: AVDD and IOVDD can be connected to 3.3v by short circuit.
 
-####Library and Basic Settings: [Linux driver for VL53L5CX multi-zone sensor ](https://www.st.com/en/embedded-software/stsw-img025.html) 
+#### Library and Basic Settings: [Linux driver for VL53L5CX multi-zone sensor ](https://www.st.com/en/embedded-software/stsw-img025.html) 
 
 
 
