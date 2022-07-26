@@ -29,12 +29,6 @@ for(i=0;i<4;i++)
 	dev[i].platform.address = address_slave[i]<<1;
 }
 
-	// dev[0].platform.address = 0x30<<1;
-	// dev[1].platform.address = 0x31<<1;
-	// dev[2].platform.address = 0x32<<1;
-	// dev[3].platform.address = 0x33<<1;
-	
-	
 
 	for(i=0;i<4;i++){
 		status = vl53l5cx_set_ranging_frequency_hz(&dev[i], 50);
@@ -102,6 +96,5 @@ for(i=0;i<4;i++)
 		vl53l5cx_comms_close(&dev[i].platform);
 	}
 	
-
 	return 0;
 }
