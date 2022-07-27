@@ -10,7 +10,7 @@ NOTE: AVDD and IOVDD must be supplied with voltage.
 
 **NOTE: A maximum voltage of 3.3V should be applied to the IOWA input.**
 
-**NOTE: When assigning an address, it should be drawn to the 3.3v and GND lines with a 47k resistor.**
+**NOTE: When assigning an address, the LPn pin must be pulled to the 3.3v and GND lines with a 47k resistor.**
 
 NOTE: AVDD and IOVDD can be connected to 3.3v by short circuit.
 
