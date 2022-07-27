@@ -1,5 +1,3 @@
-
-
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
@@ -17,7 +15,7 @@
 #define DIRECTION_MAX 35
 #define VALUE_MAX 30
 #define LOW 0
-#define DELAY 10000
+#define DELAY 100000
 
 VL53L5CX_Configuration 	Dev[4];
 
@@ -58,14 +56,13 @@ int pin_start()
 	writePin(PIN_LEFT,(i-2>=0?1:0));
 	writePin(PIN_RIGHT,(i-3>=0?1:0));
 	usleep(DELAY);
-	printf("1");
 	status = vl53l5cx_comms_init(&Dev[i].platform);
 	if(status)
 	{
 		printf("VL53L5CX comms init failed%d\n",i);
 		return -1;
 	}
-
+	usleep(DELAY);
 	status = vl53l5cx_set_i2c_address(&Dev[i], address[i]<<1);	
 	vl53l5cx_comms_close(&Dev[i].platform);
 	usleep(DELAY);
