@@ -1,6 +1,7 @@
 # VL53L5CX 
 
 Sensor: VL53L5CX
+
 Board: Raspberyy Pi3 B+
 
 NOTE: Since I am using four sensors, Lpn pins are connected to GPIO 17, GPIO 27, GPIO 22, GPIO 23 on the raspberry.
