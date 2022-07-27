@@ -7,7 +7,7 @@
 
 #include "vl53l5cx_api.h"
 
-#define DELAY_SLEEP  5000
+#define DELAY_SLEEP  50000
 
 VL53L5CX_Configuration dev[4];
 uint8_t status, isAlive, isReady,i;
